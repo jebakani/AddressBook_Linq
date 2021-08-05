@@ -13,8 +13,11 @@ namespace AddressBookTest
             addressBook = new AddressBookManager();
         }
         [TestMethod]
-        public void TestMethod1()
+        public void InsertionTest()
         {
+            int expected = 1;
+            int actual=addressBook.InsertIntoAddressBook(new ContactDetails());
+            Assert.AreEqual(expected, actual);
         }
     }
 }

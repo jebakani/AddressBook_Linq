@@ -21,5 +21,22 @@ namespace AddressBook_Linq
             address.Add(new ContactDetails { personId = 5, adrsBookName = "CTS", firstName = "stephan", lastName = "Kingsley", address = "mgr nagar", state = "kerala", city = "xxx", zipCode = 869542, phoneNumber = 6548597235, emailAddress = "stephank@gmail.com" });
             return address;
         }
+
+        //UC2-Insert Into AddressBook
+        public int InsertIntoAddressBook(ContactDetails contact)
+        {
+            contact.personId = 7;
+            contact.firstName = "jeba";
+            contact.lastName = "kani";
+            contact.address = "xyr nagar";
+            contact.city = "madurai";
+            contact.state = "tamil nadu";
+            contact.zipCode = 845236;
+            contact.phoneNumber = 7856423695;
+            contact.emailAddress = "ghk@gmail.com";
+            AddAddresss();
+            address.Add(contact);
+            return 1;
+        }
     }
 }
