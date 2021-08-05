@@ -18,7 +18,7 @@ namespace AddressBook_Linq
             address.Add(new ContactDetails { personId = 3,   firstName = "jack", lastName = "brown", address = "vng road", state = "Kerala", city = "abc", zipCode = 845126, phoneNumber = 5423698542, emailAddress = "jack@gmail.com", addressBookName = "add1", type = "friends" });
             address.Add(new ContactDetails { personId = 6,  firstName = "jessi", lastName = "Arul", address = "hall road", state = "TamilNadu", city = "madurai", zipCode = 956152, phoneNumber = 9856123457, emailAddress = "jessi@gmail.com", addressBookName = "add2", type = "family" });
             address.Add(new ContactDetails { personId = 4,  firstName = "marcus", lastName = "Daniel", address = "yng coloney", state = "TamilNadu", city = "chennai", zipCode = 758462, phoneNumber = 7856954236, emailAddress = "marcus@gmail.com", addressBookName = "add1", type = "friends" });
-            address.Add(new ContactDetails { personId = 5,  firstName = "stephan", lastName = "Kingsley", address = "mgr nagar", state = "kerala", city = "xxx", zipCode = 869542, phoneNumber = 6548597235, emailAddress = "stephank@gmail.com", addressBookName = "add1", type = "famuly" });
+            address.Add(new ContactDetails { personId = 5,  firstName = "stephan", lastName = "Kingsley", address = "mgr nagar", state = "kerala", city = "xxx", zipCode = 869542, phoneNumber = 6548597235, emailAddress = "stephank@gmail.com", addressBookName = "add1", type = "family" });
             return address;
         }
 
@@ -89,7 +89,7 @@ namespace AddressBook_Linq
             }
             return result;
         }
-        //UC7-Sorting on order
+        //UC8-Sorting on order
         public string SortingOfList(string cityName)
         {
             string result = "";
@@ -97,6 +97,16 @@ namespace AddressBook_Linq
             foreach (var r in res)
             {
                 result += "" + r.firstName + " ";
+            }
+            return result;
+        }
+        public string CountOfListByType()
+        {
+            string result = "";
+            var res = address.GroupBy(x => x.type).Select(x => new { personId = x.Key, count = x.Count() });
+            foreach (var r in res)
+            {
+                result += "" + r.personId + " " + r.count + " ";
             }
             return result;
         }
