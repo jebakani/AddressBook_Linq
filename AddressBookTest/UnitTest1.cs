@@ -36,12 +36,22 @@ namespace AddressBookTest
             int actual = addressBook.DeleteContact(2);
             Assert.AreEqual(expected, actual);
         }
+        //UC6-retrival of records
         [TestMethod]
         public void RetrivalBaseonCityOrStateTest()
         {
             string expected = "tim jessi marcus ";
             addressBook.AddAddresss();
             string actual = addressBook.RetriveOnCityOrState("madurai","TamilNadu");
+            Assert.AreEqual(expected, actual);
+        }
+        //UC7-Counting the person based in city
+        [TestMethod]
+        public void CountBaseonCityOrStateTest()
+        {
+            string expected = "ymg 1 madurai 2 abc 1 chennai 1 xxx 1 ";
+            addressBook.AddAddresss();
+            string actual = addressBook.CountOfList();
             Assert.AreEqual(expected, actual);
         }
     }

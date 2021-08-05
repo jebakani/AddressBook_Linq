@@ -67,7 +67,7 @@ namespace AddressBook_Linq
                 return 1;
             }
         }
-        //UC5-Deteling the contact from list
+        //UC6-Retriving the contact from list
         public string RetriveOnCityOrState(string city, string state)
         {
             string result = "";
@@ -75,6 +75,17 @@ namespace AddressBook_Linq
             foreach(var r in res)
             {
                 result += "" + r.firstName + " ";
+            }
+            return result;
+        }
+        //UC7-Count the contact from list
+        public string CountOfList()
+        {
+            string result = "";
+            var res = address.GroupBy(x => x.city).Select(x => new { personId = x.Key, count = x.Count() });
+            foreach (var r in res)
+            {
+                result += "" + r.personId + " "+r.count+" ";
             }
             return result;
         }
