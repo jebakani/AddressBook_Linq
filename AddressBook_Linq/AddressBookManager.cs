@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace AddressBook_Linq
 {
-    class AddressBookManager
+    public class AddressBookManager
     {
         List<ContactDetails> address;
 
+        //adding item to the address book
         public List<ContactDetails> AddAddresss()
         {
             address.Add(new ContactDetails { personId = 1, adrsBookName = "TVS", firstName = "tom", lastName = "jerry", address = "tod road", state = "kerala", city = "ymg",zipCode=869542,phoneNumber=8546321556,emailAddress="jerry@gmail.com" });

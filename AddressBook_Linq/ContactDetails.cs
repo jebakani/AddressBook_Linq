@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AddressBook_Linq
 {
-    class ContactDetails
+    //create contact details 
+    public class ContactDetails
     {
         public int personId { get; set; }
         public string firstName { get; set; }
