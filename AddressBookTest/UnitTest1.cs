@@ -36,5 +36,13 @@ namespace AddressBookTest
             int actual = addressBook.DeleteContact(2);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void RetrivalBaseonCityOrStateTest()
+        {
+            string expected = "tim jessi marcus ";
+            addressBook.AddAddresss();
+            string actual = addressBook.RetriveOnCityOrState("madurai","TamilNadu");
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

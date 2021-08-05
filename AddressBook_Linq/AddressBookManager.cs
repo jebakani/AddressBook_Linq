@@ -67,5 +67,16 @@ namespace AddressBook_Linq
                 return 1;
             }
         }
+        //UC5-Deteling the contact from list
+        public string RetriveOnCityOrState(string city, string state)
+        {
+            string result = "";
+            var res = (from add in address where (add.city == city || add.state == state) select add).ToList();
+            foreach(var r in res)
+            {
+                result += "" + r.firstName + " ";
+            }
+            return result;
+        }
     }
 }
