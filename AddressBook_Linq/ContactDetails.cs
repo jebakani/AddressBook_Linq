@@ -18,7 +18,6 @@ namespace AddressBook_Linq
         public long zipCode { get; set; }
         public long phoneNumber { get; set; }
         public string emailAddress { get; set; }
-        public string type { get; set; }
-        public string adrsBookName { get; set; }
+    
     }
 }

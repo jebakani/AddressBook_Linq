@@ -16,7 +16,16 @@ namespace AddressBookTest
         public void InsertionTest()
         {
             int expected = 1;
-            int actual=addressBook.InsertIntoAddressBook(new ContactDetails());
+           ContactDetails contact= new ContactDetails();
+            int actual=addressBook.InsertIntoAddressBook(contact);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void EditCOntactTest()
+        {
+            int expected = 1;
+            addressBook.AddAddresss();
+            int actual = addressBook.EditContact(2, "tim", 87637489502);
             Assert.AreEqual(expected, actual);
         }
     }
